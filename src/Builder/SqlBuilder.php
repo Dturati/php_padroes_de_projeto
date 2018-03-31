@@ -16,10 +16,12 @@ class SqlBuilder implements BuilderInterface
     public function setTable(string $table)
     {
         $this->query->table($table);
+        return $this;
     }
 
-    public function getAllString(): string
+    public function getSqlAll(): object
     {
+
         return $this->query->select()
             ->getQuery();
     }

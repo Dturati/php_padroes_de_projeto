@@ -22,11 +22,9 @@ print_r(__DIR__."\n");
 echo "Padrão builder\n";
 
 $builder    = new SqlBuilder();
-//$director   = new  SqlDirector($builder);
-//print_r($builder);
+
 $banck = new Model($builder);
-//$casa = new Casa($builder);
+
 print_r($banck->getTable()."\n");
-//print_r($casa->getTable()."\n");
-//print_r($casa->getSqlAll());
+
 print_r($banck->getSqlAll());

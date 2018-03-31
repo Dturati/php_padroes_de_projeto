@@ -14,10 +14,11 @@ abstract  class ModelAbstract implements DirectorInterface
         $this->setTableName();
     }
 
-    public function getSqlAll(): string
+    public function getSqlAll() : object
     {
+
         $this->builder->setTable($this->table);
-        return $this->builder->getAllString();
+        return $this->builder->getSqlAll();
     }
 
     protected function setTableName(){
@@ -26,6 +27,7 @@ abstract  class ModelAbstract implements DirectorInterface
             $table = array_pop($table);
             $this->table = strtolower($table);
         }
+        return $this;
     }
 
     /**
